@@ -67,7 +67,7 @@ public final class UseArithmeticService {
          * until it succeeds.
          */
         Boolean receiveTry = false;
-        String responce = "";
+        String responce = ""; //variable for server responce
         do {
             try {
                 responce = server.receiveResponse();
