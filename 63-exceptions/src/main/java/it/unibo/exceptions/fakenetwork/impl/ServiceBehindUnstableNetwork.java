@@ -60,15 +60,17 @@ public final class ServiceBehindUnstableNetwork implements NetworkComponent {
             commandQueue.add(data);
         } else {
             final var message = data + " is not a valid keyword (allowed: " + KEYWORDS + "), nor is a number";
-            System.out.println(message);
+            //System.out.println(message);
             commandQueue.clear();
+            
             /*
-             * This method, in this point, should throw an IllegalStateException.
+             * This method, in this point, should throw an IllegalStateException(?) should by an IllegalArgumentException.
              * Its cause, however, is the previous NumberFormatException.
              * Always preserve the original stacktrace!
              *
              * The previous exceptions must be set as the cause of the new exception
              */
+            throw new IllegalArgumentException(message, exceptionWhenParsedAsNumber);
         }
     }
 
