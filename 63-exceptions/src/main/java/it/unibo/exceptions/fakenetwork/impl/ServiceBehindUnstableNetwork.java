@@ -24,13 +24,17 @@ public final class ServiceBehindUnstableNetwork implements NetworkComponent {
     /**
      * @param failProbability the probability that a network communication fails
      * @param randomSeed random generator seed for reproducibility
+     * 
      */
-    public ServiceBehindUnstableNetwork(final double failProbability, final int randomSeed) {
-        /*
-         * The probability should be in [0, 1[!
-         */
+    public ServiceBehindUnstableNetwork(final double failProbability, final int randomSeed){
+        
+        if(!(failProbability >= 0 && failProbability <1)) {
+            throw new IllegalArgumentException("Has been insert an illegal argument for the final double variable failProbability: " + failProbability + ", which require a value >= 0 and < 1");
+        }
+           
         this.failProbability = failProbability;
         randomGenerator = new Random(randomSeed);
+        
     }
 
     /**
