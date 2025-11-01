@@ -56,7 +56,7 @@ public final class UseArithmeticService {
                 sendTry = true;
             }catch (IOException e) {
                 sendTry = false;
-                System.out.println("\nErrore to send message. \nHere why: " + e + " \nRetring . . .\n");
+                //System.out.println("\nErrore to send message. \nHere why: " + e + " \nRetring . . .\n");
             }
         }while(sendTry == false);
     }
@@ -74,7 +74,7 @@ public final class UseArithmeticService {
                 receiveTry = true;
             }catch (IOException e) {
                 receiveTry = false;
-                System.out.println("\nErrore to receive the message send before. \nHere why: " + e + " \nRetring . . .\n");
+                //System.out.println("\nErrore to receive the message send before. \nHere why: " + e + " \nRetring . . .\n");
             }
         }while(receiveTry == false);
 
